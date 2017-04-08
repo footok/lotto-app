@@ -53,4 +53,10 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  get 'record/list'
+  get 'record/new'
+  get 'record/show'
+  post 'record/create'
+  get 'record/delete'
 end
