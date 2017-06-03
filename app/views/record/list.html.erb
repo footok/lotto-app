@@ -5,7 +5,7 @@
 
   <ul id = "books">
        <% @records.each do |c| %>
-            <li><%= link_to c.created_at, {:action => 'show', :id => c.id} -%></li>
+            <li><%= link_to c.send(:'1'), {:action => 'show', :id => c.id} -%></li>
                <% end %>
   </ul>
 
