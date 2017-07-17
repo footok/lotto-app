@@ -59,5 +59,6 @@ Rails.application.routes.draw do
   get 'record/new'
   get 'record/show'
   post 'record/create'
+  post 'record/update'
   get 'record/delete'
 end
