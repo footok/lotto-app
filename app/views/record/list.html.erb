@@ -3,12 +3,13 @@
 <% else %>
   <p>These are the current books in our system</p>
 
-  <ul id = "books">
+  <div class = "records">
     <% @records.each do |c| %>
-      <li><%= link_to c.number, {:action => 'show', :id => c.id} -%></li>
-      <b><%= c.number %></b>
+      <%# <li><%= link_to c.number, {:action => 'show', :id => c.id} -%>
+      <h1><%= c.number %></h1>
+      <h4><%= c.count %></h4>
     <% end %>
-  </ul>
+  </div>
 
 <% end %>
 <p><%= link_to "Update a Record", {:action => 'new' }%></p>

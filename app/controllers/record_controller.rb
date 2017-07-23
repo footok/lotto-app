@@ -1,6 +1,6 @@
 class RecordController < ApplicationController
   def list
-    @records = Record.all
+    @records = Record.all.order(:id)
   end
 
   def new
