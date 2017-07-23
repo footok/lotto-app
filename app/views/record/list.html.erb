@@ -1,13 +1,15 @@
 <% if @records.blank? %>
-  <p>There are not any books currently in the system.</p>
+  <p>Books are not currently in the system.</p>
 <% else %>
   <p>These are the current books in our system</p>
 
-  <ul id = "books">
-       <% @records.each do |c| %>
-            <li><%= link_to c.created_at, {:action => 'show', :id => c.id} -%></li>
-               <% end %>
-  </ul>
+  <div class = "records">
+    <% @records.each do |c| %>
+      <%# <li><%= link_to c.number, {:action => 'show', :id => c.id} -%>
+      <h1><%= c.number %></h1>
+      <h4><%= c.count %></h4>
+    <% end %>
+  </div>
 
 <% end %>
-<p><%= link_to "Add new Record", {:action => 'new' }%></p>
+<p><%= link_to "Update a Record", {:action => 'new' }%></p>

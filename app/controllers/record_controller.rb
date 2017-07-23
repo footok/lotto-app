@@ -1,6 +1,6 @@
 class RecordController < ApplicationController
   def list
-    @records = Record.all
+    @records = Record.all.order(:id)
   end
 
   def new
@@ -13,11 +13,28 @@ class RecordController < ApplicationController
 
   def create
     @record = Record.new(record_params)
+    puts record_params
+    redirect_to :action => 'list'
+  end
+
+  def update
+    id = params[:records][:id]
+    @record = Record.find(id)
+    count = @record.count
+
+    if count.nil?
+      count = 1
+    else
+      count += 1
+    end
+
+    @record.update_attributes(:count => count)
+
     redirect_to :action => 'list'
   end
 
   def record_params
-    params.require(:records).permit(':1', ':2', ':3', ':4', ':5', ':6')
+    params.require(:records).permit('number', 'count')
   end
 
   def delete

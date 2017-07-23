@@ -54,9 +54,11 @@ Rails.application.routes.draw do
   #     resources :products
   #   end
 
+  root 'welcome#welcome'
   get 'record/list'
   get 'record/new'
   get 'record/show'
   post 'record/create'
+  post 'record/update'
   get 'record/delete'
 end
